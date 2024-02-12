@@ -1,0 +1,1233 @@
+@import "helper/variables";
+@import "helper/mixins";
+
+body {
+    background-color: $light-blue;
+
+    header,
+    footer,
+    .offcanvas-header,
+    .offcanvas-footer {
+        background-color: $midnight-blue;
+    }
+
+    //HEADER
+    header {
+
+        //Imagen
+        #logo-l {
+            max-height: 70px;
+
+            @media (min-width:768px) {
+                max-height: 90px;
+            }
+        }
+
+        #logo-s {
+            max-width: 50px;
+        }
+
+        //nav
+        @media (min-width:768px) {
+            .navbar-nav {
+                .nav-link {
+                    font-size: 1.25rem
+                }
+            }
+        }
+
+        //offcanvas y modal
+        .offcanvas-body {
+            background-color: $light-blue;
+            color: $dark-blue;
+        }
+
+        //icono
+        #profile-icon {
+            margin-top: 5px;
+        }
+        //Cambio color al desplegable
+        .dropdown-toggle::after{
+            color: white;
+        }
+        //Pongo margen para que no se quede pegado a la derecha el desplegable
+        .dropdown-menu {
+            max-width: 20px;
+            margin-left: -70px !important;
+        }
+        .img-perfil{
+            width: 35px; /* Ajusta el ancho deseado */
+            height: 35px; /* Ajusta la altura deseada */
+            object-fit: cover; /* Para manejar recorte si las proporciones son diferentes */
+
+        }
+    }
+
+    //modals
+    .modal-body {
+        background-color: $light-blue;
+
+        h2,
+        hr {
+            color: $midnight-blue;
+        }
+
+        .modal-body, .modal-footer{
+            .btn{
+                color:white;
+                background-color: $midnight-blue;
+                &:hover,&:active,&:focus{background-color: $cloudy-blue; box-shadow: 0 0 0 0 rgba(158, 183, 229, 0.25);}
+            }
+        }
+        .modal-header, .modal-footer{background-color: $midnight-blue; color:white}
+        .modal-content{color: $dark-blue;}
+        .modal-footer{
+            .btn{
+                background-color: $cloudy-blue;
+                &:hover, &.active,&:focus{color:$midnight-blue;background-color: $light-blue; box-shadow: 0 0 0 0 rgba(158, 183, 229, 0.25);}
+            }
+        }
+        .modal{.btn-close {background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;}}
+
+
+        .input-group-text {
+            background-color: $midnight-blue;
+            color: white;
+        }
+
+        form textarea {
+            min-height: 75px;
+            max-height: 125px;
+        }
+    }
+
+    .modal-body,
+    .modal-footer {
+        .btn {
+            color: white;
+            background-color: $midnight-blue;
+
+            &:hover {
+                background-color: $cloudy-blue;
+            }
+
+            &.active {
+                color: white;
+                background-color: $cloudy-blue;
+            }
+
+            &:focus {
+                background-color: $cloudy-blue;
+                box-shadow: 0 0 0 0 rgba(158, 183, 229, 0.25);
+            }
+        }
+    }
+
+    .modal-header,
+    .modal-footer {
+        background-color: $midnight-blue;
+        color: white
+    }
+
+    .modal-content {
+        color: $dark-blue;
+    }
+
+    .modal {
+        .btn-close {
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+        }
+    }
+
+    //MAINS
+    //MAIN BOOKPAGE
+    #menu-book {
+        h1 {
+            text-align: center;
+        }
+
+        .book-img {
+            width: 75%;
+        }
+
+        .info {
+            width: 100%;
+
+            h1,
+            .author {
+                font-family: $vollkorn;
+            }
+
+            .desc {
+                text-align: justify;
+            }
+
+            .hide-text {
+                max-height: 3em;
+                text-overflow: ellipsis;
+            }
+
+            .show-text {
+                height: auto;
+            }
+
+            .read-more {
+                color: $dark-blue;
+                font-weight: 500;
+            }
+
+            .genres li {
+                background-color: transparent;
+                border-color: transparent;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                font-weight: 500;
+            }
+
+            .btn {
+                background-color: $midnight-blue;
+                color: $light-blue;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $gray;
+                    color: $midnight-blue;
+                }
+
+                &.remove-fav {
+                    background-color: $gray;
+                    color: $midnight-blue;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: $midnight-blue;
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+
+        .comments,
+        .related {
+            background-color: $cloudy-blue;
+        }
+
+        .comments {
+            color: $light-blue;
+
+            .card {
+                background-color: rgba(229, 237, 255, 0.5);
+                color: $midnight-blue;
+                border: none;
+
+                img {
+                    width: 100px; /* Ajusta el ancho deseado */
+                    height: 100px; /* Ajusta la altura deseada */
+                    object-fit: cover; /* Para manejar recorte si las proporciones son diferentes */
+                    border-radius: 50%;
+                    margin: 10px;
+                }
+                .btn {
+                    background-color: $midnight-blue;
+                    color: $light-blue;
+
+                    &:hover {
+                        background-color: $light-blue;
+                        color: $midnight-blue;
+                    }
+
+                    &:active {
+                        box-shadow: 0 0 0 0.25rem rgba(114, 114, 114, 0.25);
+                    }
+                }
+
+                textarea:focus,
+                textarea:active {
+                    box-shadow: 0 0 0 0.25rem rgba(114, 114, 114, 0.25);
+                    border: none;
+                }
+
+                a {color: $light-blue;}
+                .coment-input{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                @media (min-width:576px) {
+                    .coment-input{
+                        display: flex;
+                        flex-direction: row;
+                    }
+                }
+
+            }
+
+            .pagination {
+                li a {
+                    background-color: $midnight-blue;
+                    color: $light-blue;
+                    border: none;
+
+                    &:active,
+                    &:focus {
+                        box-shadow: 0 0 0 0.25rem rgba(114, 114, 114, 0.25);
+                    }
+                }
+
+                .active .page-link,
+                li a {
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: $light-blue;
+                        color: $midnight-blue;
+                    }
+                }
+
+                .active .page-link {
+                    background-color: $dark-blue;
+                }
+            }
+        }
+
+        .related {
+            color: $light-blue;
+
+            .card {
+                background-color: $cloudy-blue;
+                border: none;
+            }
+        }
+
+        @media (width >=768px) {
+            .book-img {
+                width: 30%;
+            }
+
+            .info {
+                width: 70%;
+
+                h1 {
+                    text-align: left;
+                }
+
+                span {
+                    display: flex;
+                    justify-content: start;
+                }
+            }
+        }
+    }
+    //MAIN INVITADO
+    #menuInvitado{
+        //layout
+        .mContent{
+            column-gap: 2%;
+            @media (min-width:1200px) {
+                column-gap: 3%;
+            }
+        }
+        //nav-tabs
+        .nav-link {
+            background-color: $midnight-blue;
+        }
+
+        .nav-link.active {
+            background-color: $cloudy-blue;
+            border-bottom-color: $cloudy-blue;
+        }
+
+        //tabs
+        .tab-pane {
+            background-color: $cloudy-blue;
+        }
+
+        .tab-content {
+            background-color: $cloudy-blue;
+            border-radius: 0px 5px 5px;
+        }
+
+        //books / music
+        .card {
+            /* Calcula el ancho de cada tarjeta considerando el espacio entre ellas */
+            overflow: hidden;
+            position: relative;
+            opacity: 1;
+            transition: all 0.8s ease-in-out;
+            max-width: 200px;
+            margin-right: 3rem;
+            margin-left: 3rem;
+
+            @media (max-width:576px) {
+                margin-right: 1rem;
+                margin-left: 1rem;
+                min-width: 150px;
+            }
+
+            @media (min-width:1500px) {
+                margin-right: 5rem;
+                margin-left: 5rem;
+            }
+
+            @media (min-width:2000px) {
+                margin-right: 0rem;
+                margin-left: 0rem;
+            }
+        }
+
+        .content {
+            background-color: #29303fce;
+            opacity: 0;
+            transition: 0.5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card:hover .content {
+            opacity: 50;
+        }
+
+        //comments
+        #tab3 {
+            .card {
+                max-width: 100%;
+                background-color: $gray;
+                color: white;
+
+                img {
+                    max-height: 300px;
+                    max-width: 200px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 5px;
+                    margin-top: 1rem;
+                }
+
+                @media (min-width:650px) {
+                    flex-direction: row;
+
+                    img {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        //aside
+        aside {
+            .carousel {
+                background-color: $cloudy-blue;
+
+                .carousel-indicators {
+                    margin-bottom: -2rem;
+                }
+
+                .carousel-indicators [data-bs-target] {
+                    background-color: $midnight-blue;
+                }
+                //img
+                img{max-height: 300px; }
+                p{
+                    max-height: 9em;
+                    overflow: hidden;
+                }
+                .link{
+                    color: $light-blue;
+                    @include hover-color(white);
+                }
+            }
+        }
+    }
+
+    //MAIN-USER
+    #menu-user {
+
+        #followersModal,
+        #followingModal {
+            .modal-body {
+                max-height: 400px;
+                overflow-y: scroll;
+                scrollbar-width: none;
+
+                //Hides scrollbar for chrome
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .user {
+                color: $midnight-blue;
+                background-color: rgba(229, 237, 255, 0.5);
+            }
+        }
+
+        .user,
+        .user a,
+        .posts,
+        .song,
+        .fav-books,
+        .fav-books .card {
+            background-color: $cloudy-blue;
+            color: $light-blue;
+        }
+
+        .user,
+        .posts .card {
+            border: none;
+        }
+
+        .user-img {
+            width: 50%;
+        }
+
+        .user .btn {
+            background-color: $midnight-blue;
+            color: $light-blue;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $light-blue;
+                color: $midnight-blue;
+            }
+        }
+
+        .song {
+            .song-img {
+                width: 25%;
+            }
+
+            .btn {
+                background-color: $midnight-blue;
+                color: $light-blue;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $light-blue;
+                    color: $midnight-blue;
+                }
+            }
+
+            audio {
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .posts .card img {
+            max-width: 10%;
+        }
+
+        .posts {
+            max-height: 270px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            //Hides scrollbar for chrome
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .card {
+                background-color: rgba(229, 237, 255, 0.5);
+                color: $midnight-blue;
+            }
+        }
+
+        .fav-books {
+            max-height: 270px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            //Hides scrollbar for chrome
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .card {
+                max-width: 40%;
+                position: relative;
+                opacity: 1;
+                transition: all 0.8s ease-in-out;
+            }
+
+            .content {
+                background-color: #29303fce;
+                opacity: 0;
+                transition: 0.5s;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .card:hover .content {
+                opacity: 50;
+            }
+        }
+
+        @media only screen and (min-width: 576px) {
+            .user-img {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .song-img {
+                width: 50%;
+            }
+
+            .user-img {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .song-img {
+                width: 25%;
+            }
+        }
+    }
+    //MAIN ABOUT
+    #about{
+        color: $dark-blue;
+        p,blockquote{font-size: 1rem;}
+        #banner{background-color: #0b1834ca;}
+        #libro{flex-direction: column;}
+            @media (min-width:768px) {
+                #libro{flex-direction: row;}
+                p,blockquote{font-size: 1.3rem;}
+            }
+        #books{max-height: 300px;}
+        article{background-color: $cloudy-blue;}
+        .card{
+            border-color: $dark-blue;
+            min-width: 175px;
+            .card-header{background-color: $midnight-blue;}
+            .light{background-color:$light-blue;min-height: 50%; }
+            .dark{background-color:$dark-blue;min-height: 50%;}
+            .gray{background-color:$gray ;min-height:  50%;}
+            .cloudy{background-color:$cloudy-blue ;min-height:  50%;}
+            .midnight{background-color:$midnight-blue ;min-height:  50%;}
+            .c-body{min-height: 100px;}
+        }
+        .members{min-width: 250px;
+            a{
+                color: $midnight-blue;
+                @include hover-color($cloudy-blue);
+            }
+        }
+    }
+    //CONTACT MAIN
+    #contactMain {
+        form{
+            background-color: $cloudy-blue;
+            color: $light-blue;
+            .btn {
+                color: white;
+                background-color: $midnight-blue;
+                &:hover{
+                    background-color: $light-blue;
+                    color: $dark-blue;
+                }
+                &:active{
+                    background-color: $gray;
+                    color: $dark-blue;
+                }
+            }
+            textarea{max-height: 100px;}
+        }
+        .input-group-text{
+            background-color: $midnight-blue;
+        }
+        .info{
+            .card-header{background-color: $midnight-blue;}
+            .c-body{background-color: $cloudy-blue; border-radius: 0 0 5px 5px;}
+        }
+    }
+
+    //BROWSE MAIN
+    #browseMain {
+        .container {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: $cloudy-blue;
+            height: fit-content;
+            max-height: 600px;
+
+            img {
+                width: auto;
+                margin: 0;
+            }
+        }
+        #tab1{
+            .card {
+                /* Calcula el ancho de cada tarjeta considerando el espacio entre ellas */
+                overflow: hidden;
+                position: relative;
+                opacity: 1;
+                transition: all 0.8s ease-in-out;
+                max-width: 200px;
+                margin-right: 3rem;
+                margin-left: 3rem;
+
+                @media (max-width:576px) {
+                    margin-right: 1rem;
+                    margin-left: 1rem;
+                    min-width: 150px;
+                }
+
+                @media (min-width:1500px) {
+                    margin-right: 5rem;
+                    margin-left: 5rem;
+                }
+
+                @media (min-width:2000px) {
+                    margin-right: 0rem;
+                    margin-left: 0rem;
+                }
+            }
+
+            .content {
+                background-color: #29303fce;
+                opacity: 0;
+                transition: 0.5s;
+                position: absolute;
+                top: 0;
+                left: 0;
+                p{
+                    font-size: large;
+                }
+            }
+
+            .card:hover .content {
+                opacity: 50;
+            }
+
+        }
+
+        .cardUsuarios {
+            overflow-y: auto;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                width: 0.5em;
+        }
+
+            height: 100%;
+        }
+
+        button {
+            border: none;
+        }
+
+        .contenido {
+            max-height: 72vh;
+            flex-wrap: wrap;
+
+            overflow-y: auto;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                width: 0.5em;
+            }
+        }
+
+        .usuario {
+            background-color: $light-blue;
+        }
+
+        .contenidoUsuarios {
+            max-height: 72vh;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                width: 0.5em;
+            }
+        }
+
+        .mostrador {
+            width: 100%;
+            transition: .5s ease;
+        }
+
+        .mostrador .fila {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mostrador .fila .item {
+            flex: 0 0 calc(33.333% - 5px);
+            max-width: calc(33.333% - 5px);
+            width: 35vh;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .mostrador .fila .item:hover {
+            background-color: $cloudy-blue;
+        }
+
+        .mostrador .fila img {
+            width: 100%;
+        }
+
+        .mostrador .fila .item .descripcion {
+            color: black;
+            font-weight: bold;
+        }
+
+        .mostrador .fila .item {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 20px;
+            width: 80%;
+        }
+
+        p {
+            font-size: 14px;
+            color: $gray;
+        }
+
+        .fila {
+            display: flex;
+            align-items: center;
+        }
+
+        .fila label {
+            display: block;
+        }
+
+        .fila select {
+            width: 100px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 320px) {
+            .libros {
+                padding: 3% !important;
+                max-width: 45vh;
+
+                .contenido {
+                    padding: 2% !important;
+                }
+            }
+
+            .cardUsuarios {
+                padding: 3% !important;
+                width: 63vh;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .libros {
+                padding: 3% !important;
+
+                .contenido {
+                    padding: 2% !important;
+                }
+            }
+
+            .cardUsuarios {
+                padding: 3% !important;
+            }
+        }
+
+        @media (min-width: 1237px) {
+            .libros {
+                padding: 3% !important;
+                max-width: 100vh;
+
+                .contenido {
+                    padding: 2% !important;
+                }
+            }
+
+            .container {
+                flex-direction: row;
+            }
+
+            .cardUsuarios {
+                padding: 3% !important;
+                width: auto;
+            }
+        }
+    }
+
+    //ADMIN MAIN
+    #adminTab {
+        .nav-tabs {
+            border: none;
+        }
+
+        .nav-link {
+            background-color: $midnight-blue;
+        }
+
+        .nav-link.active {
+            background-color: $cloudy-blue;
+            border-color: $cloudy-blue;
+        }
+        .admin{background-color: $cloudy-blue;}
+        .info {background-color: $cloudy-blue;
+            max-height: 700px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            //Hides scrollbar for chrome
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .link {
+            color: $midnight-blue;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $light-blue;
+            }
+        }
+
+        .card {
+            max-width: 100%;
+            background-color: $gray;
+            color: white;
+
+            img {
+                max-height: 200px;
+                max-width: 130px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 5px;
+                margin-top: 1rem;
+            }
+
+            @media (min-width:650px) {
+                flex-direction: row;
+
+                img {
+                    margin: 15px;
+                }
+            }
+        }
+        #tab3{
+            form {
+                background-color: $cloudy-blue;
+
+                textarea {
+                    max-height: 100px;
+                }
+
+                .btn {
+                    background-color: $gray;
+                    color: $light-blue;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: $light-blue;
+                        color: $midnight-blue;
+                    }
+                }
+            }
+
+            aside{
+                #newsLetter{
+                    background-color: $light-blue;
+                    .btn {
+                        background-color: $cloudy-blue;
+                        color: $light-blue;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: $gray;
+                            color: $light-blue;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width:992px) {
+                aside {
+                    margin-top: 10px;
+                    background-color: $cloudy-blue;
+                    border-radius: 10px;
+                    #newsLetter{
+                        background-color: $cloudy-blue;
+                        .btn {
+                            background-color: $gray;
+                            color: $light-blue;
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                background-color: $light-blue;
+                                color: $dark-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //ADMIN REPORT COMMENT
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+
+        .cardUsuarios {
+            max-height: 52vh;
+            overflow-y: auto;
+            scrollbar-width: none;
+            width: fit-content;
+
+            &::-webkit-scrollbar {
+                width: 0.5em;
+            }
+        }
+
+        .comentarios {
+            max-height: 60vh;
+        }
+        .fondoGrafica {
+            background-color: $light-blue !important;
+            min-height: 100px;
+        }
+        #modalform{background-color: $light-blue;}
+        #tab1{
+            .btn {
+                background-color: $gray;
+                color: $light-blue;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $light-blue;
+                    color: $midnight-blue;
+                }
+            }
+            .modal{
+                .btn {
+                    background-color: $cloudy-blue;
+                    color: $light-blue;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: $gray;
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+        #tab2{
+            .btn {
+                background-color: $gray;
+                color: $light-blue;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $light-blue;
+                    color: $midnight-blue;
+                }
+            }
+        }
+
+    }
+    //MAIN DASHBOARD
+    #menuDashboard{
+        .contenedorCards {
+            background-color: $cloudy-blue;
+            overflow-y: auto;
+            border-radius: 20px;
+            max-height: 600px;
+            min-height: 400px;
+            /* Para Quitar la barra de scroll en Firefox*/
+            scrollbar-width: none;
+            /* Para quitar la barra de scroll WebKit (Chrome y Safari) */
+            &::-webkit-scrollbar {
+                width: 0.5em;
+            }
+            .card {
+                color: $light-blue;
+                background-color: $gray;
+                border-radius: 20px;
+                overflow-y: auto;
+                scrollbar-width: none;
+                img {
+                    max-width: 75px;
+                    max-height: 75px;
+                }
+                input {
+                    border-radius: 20px;
+                    width: 100px;
+                }
+                p {
+                    border-radius: 20px;
+                }
+                textarea {
+                    width: 70%;
+                }
+                .card-body .respuesta{
+                    background-color: #b5c6da;
+                    color: $dark-blue;
+                }
+            }
+        }
+        .carousel-indicators {
+            button{
+                background-color: $midnight-blue;
+            }
+            margin-bottom: -9px;
+        }
+        .contenedorCardPublish {
+            background-color: $cloudy-blue;
+            scrollbar-width: none;
+            overflow-y: auto;
+            border-radius: 20px;
+            .card {
+                border: none;
+                background-color: $cloudy-blue;
+                border-radius: 20px;
+                overflow-y: hidden;
+                scrollbar-width: none;
+                color: white;
+                img {
+                    max-width: 75px;
+                    max-height: 75px;
+                }
+                input {
+                    border-radius: 20px;
+                    width: 100px;
+                }
+                p {
+                    border-radius: 20px;
+                }
+
+                textarea {
+                    width: 70%;
+                }
+                .img-perfil{
+                    width: 90px; /* Ajusta el ancho deseado */
+                    height: 90px; /* Ajusta la altura deseada */
+                    object-fit: cover; /* Para manejar recorte si las proporciones son diferentes */
+                }
+                .carousel-inner{min-height: 200px;}
+            }
+        }
+
+        .imagenCancion {
+            max-width: 116px !important;
+            max-height: 116px !important;
+        }
+        .contenedorCardOpciones {
+            max-height: 900px;
+            overflow-y: auto;
+            border-radius: 20px;
+        }
+        .contenedorCardMusica {
+            overflow-y: auto;
+            color: white ;
+            audio {
+                max-width: 100%;
+                object-fit: contain;
+            }
+            .card {
+                border: none;
+                background-color: $cloudy-blue;
+                border-radius: 20px;
+                overflow-y: auto;
+            }
+        }
+        .btn {
+            background-color: $midnight-blue;
+            color: $light-blue;
+        }
+    }
+    //MAIN CAMBIAR CONTRASEÑA
+    #mainRecover{
+        form{
+            background-color: $cloudy-blue;
+            color: $light-blue;
+            .btn {
+                color: white;
+                background-color: $midnight-blue;
+                &:hover{
+                    background-color: $light-blue;
+                    color: $dark-blue;
+                }
+                &:active{
+                    background-color: $gray;
+                    color: $dark-blue;
+                }
+            }
+            textarea{max-height: 100px;}
+        }
+        .input-group-text{
+            background-color: $midnight-blue;
+        }
+        .info{
+            .card-header{background-color: $midnight-blue;}
+            .c-body{background-color: $cloudy-blue; border-radius: 0 0 5px 5px;}
+        }
+    }
+//FOOTER
+    footer{
+        .input-group{
+            input {
+
+                &:active,
+                &:focus {
+                    border-color: $cloudy-blue;
+                    box-shadow: 0 0 0 0.25rem rgba(126, 126, 126, 0.25);
+                }
+            }
+
+            .btn {
+                color: white;
+                background-color: $cloudy-blue;
+                border-color: $cloudy-blue;
+
+                &:hover {
+                    background-color: $gray;
+                    border-color: $cloudy-blue;
+                }
+
+                &:active {
+                    background-color: $gray;
+                    box-shadow: 0 0 0 0.25rem rgba(126, 126, 126, 0.25);
+                }
+            }
+        }
+    }
+
+}

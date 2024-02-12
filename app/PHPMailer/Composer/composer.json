@@ -1,0 +1,7 @@
+{
+    "name": "alexandra_alfonso/composer",
+    "description": "composer del proyecto",
+    "type": "project",
+    "minimum-stability": "stable",
+    "require": {"phpmailer/phpmailer": "^6.0"}
+}

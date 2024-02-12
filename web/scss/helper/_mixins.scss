@@ -1,0 +1,6 @@
+
+@mixin hover-color($color) {
+    &:hover{
+        color: $color;
+    }
+}
